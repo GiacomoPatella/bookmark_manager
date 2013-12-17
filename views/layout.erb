@@ -5,6 +5,12 @@
   <link rel="stylesheet" type="text/css" href="/css/application.css">
 </head>
 <body>
+    <% if current_user %>
+      Welcome, <%= current_user.email %>
+    <% end %>
+    <% if flash[:notice] %>
+      <div id="notice"><%= flash[:notice] %></div>
+    <% end %>
   <%= yield %> <!-- this executes the block get '/' do... in server.rb -->
 </body>
 </html>

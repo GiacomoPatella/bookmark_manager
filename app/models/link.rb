@@ -1,5 +1,3 @@
-# require 'tag'
-
 class Link
 
   include DataMapper::Resource

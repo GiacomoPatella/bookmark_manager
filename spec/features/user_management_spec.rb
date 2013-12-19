@@ -25,6 +25,7 @@ feature "User signs up" do
   end
 end
 
+
 feature "User signs in" do
 
   before(:each) do
@@ -47,8 +48,8 @@ feature "User signs in" do
       sign_in('test@test.com', 'wrong')
       expect(page).not_to have_content("Welcome, test@test.com")
     end
-
 end
+
 
 feature 'User signs out' do
 
@@ -67,4 +68,29 @@ feature 'User signs out' do
 
 end
 
+
+feature 'User forgets password' do
+
+  before(:each) do
+    User.create(:email => "test@test.com", 
+                :password => 'test',
+                :password_confirmation => 'test'
+                )
+  end
+
+  scenario 'and recovers it' do
+    visit '/users/forgotten_pwd'
+    fill_in('email', :with => 'test@test.com')
+    click_button "Retrieve password"
+    expect(page).to have_content("Your password has been sent to your email")
+    visit '/users/reset_password/' + User.first.password_token # /users/reset_password/t8t8134r1ddad7f8hrwhfkjasd
+    fill_in('password', :with => 'new_password')
+    fill_in('password_confirmation', :with => 'new_password')
+    click_button "Reset password"
+    expect(page).to have_content("Thank you, your password has been reset")
+    sign_in('test@test.com', 'new_password')
+    expect(page).to have_content("Welcome, test@test.com")
+  end
+
+end
 

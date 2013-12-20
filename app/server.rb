@@ -5,6 +5,7 @@ require 'rack-flash'
 require './app/models/link'
 require './app/models/user'
 require './app/models/tag'
+require 'rest_client'
 
 require_relative 'helpers/application'
 require_relative 'data_mapper_setup'

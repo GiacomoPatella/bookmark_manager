@@ -10,5 +10,3 @@ require_relative './models/tag'
 
 DataMapper.finalize
 # DataMapper.auto_upgrade!
-
-DataMapper.auto_migrate!

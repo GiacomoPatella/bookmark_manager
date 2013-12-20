@@ -92,5 +92,9 @@ feature 'User forgets password' do
     expect(page).to have_content("Welcome, test@test.com")
   end
 
+  #   scenario 'and receives email for password retrieval' do
+  #     expect(send_email_to_user(email, token)).to 
+  # end
+
 end
 

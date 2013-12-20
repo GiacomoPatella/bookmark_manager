@@ -41,7 +41,7 @@ end
 
 post '/users/reset_password' do
   user = User.first(:password_token => session[:token])
-  #reset their password
+  #reset their password and create
   user.update(:password => params[:password],
               :password_confirmation => params[:password_confirmation] )
   flash[:notice] = "Thank you, your password has been reset"

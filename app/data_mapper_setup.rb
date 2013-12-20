@@ -4,9 +4,9 @@ database_string = ENV["DATABASE_URL"] || "postgres://localhost/bookmark_manager_
 
 DataMapper.setup(:default, database_string)
 
-require './models/link'
-require './models/user'
-require './models/tag'
+require_relative './models/link'
+require_relative './models/user'
+require_relative './models/tag'
 
 DataMapper.finalize
 # DataMapper.auto_upgrade!

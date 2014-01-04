@@ -3,6 +3,10 @@ font-family: Helvetica, Arial, Sans-serif;
 background-image: url(/images/extra_clean_paper.png)
 }
 
+a {
+  text-decoration: none;
+}
+
 a.button_up {
   display: inline-block;
   width: 60px;
@@ -17,11 +21,12 @@ a.button_up {
   margin-right: 10px;
   text-shadow: 0 0 2px rgba(0,0,0, 0.4);
   font-size: 12px;
+}
 
-}a.button_in {
+a.button_in {
   display: inline-block;
   width: 60px;
-  background-color: #2A9E64;
+  background-color: #5D8A4C;
   border: 2px solid white;
   color: white;
   text-decoration: none;
@@ -71,3 +76,30 @@ header #user-links {
   text-align: right;
 }
 
+#links-container {
+  background-color: white;
+  margin: 50px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.4);
+  padding: 30px;
+}
+
+.link {
+  background-color: #EEE;
+  box-shadow: 0 0 5px rgba(0,0,0,0.4);
+  /* 10px for top and bottom, inherit from parent for left and right */
+  margin: 20px inherit;
+  padding: 15px;
+}
+
+.link a.title {
+  letter-spacing: 1px;
+}
+
+.link .description {
+  margin: 10px inherit;
+}
+
+.link .source {
+  float: right;
+  font-size: 12px;
+}

@@ -7,38 +7,44 @@ a {
   text-decoration: none;
 }
 
-a.button_up {
-  display: inline-block;
-  width: 60px;
-  background-color: #82B743;
-  border: 2px solid white;
-  color: white;
-  text-decoration: none;
-  padding: 5px 10px;
-  text-align: center;
-  border-radius: 4px;
-  margin-top: 7px;
-  margin-right: 10px;
-  text-shadow: 0 0 2px rgba(0,0,0, 0.4);
-  font-size: 12px;
-}
+  a.button_up {
+    display: inline-block;
+    width: 60px;
+    background-color: #82B743;
+    border: 2px solid white;
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    text-align: center;
+    border-radius: 4px;
+    margin-top: 7px;
+    margin-right: 10px;
+    text-shadow: 0 0 2px rgba(0,0,0, 0.4);
+    font-size: 12px;
+  }
 
-a.button_in {
-  display: inline-block;
-  width: 60px;
-  background-color: #5D8A4C;
-  border: 2px solid white;
-  color: white;
-  text-decoration: none;
-  padding: 5px 10px;
-  text-align: center;
-  border-radius: 4px;
-  margin-top: 7px;
-  margin-bottom: 10px;
-  margin-right: 20px;
-  text-shadow: 0 0 2px rgba(0,0,0, 0.4);
-  font-size: 12px;
-}
+  a.button_in {
+    display: inline-block;
+    width: 60px;
+    background-color: #5D8A4C;
+    border: 2px solid white;
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    text-align: center;
+    border-radius: 4px;
+    margin-top: 7px;
+    margin-bottom: 10px;
+    margin-right: 20px;
+    text-shadow: 0 0 2px rgba(0,0,0, 0.4);
+    font-size: 12px;
+  }
+
+  /* a link that has both classes. Overrides the previous declaration */
+  a.button_up.highlighted {
+    background-color: #B69949;
+  }
+
 
 header {
   width: 100%;
@@ -50,31 +56,26 @@ header {
                     pushing the far right beyond the page...??*/
 }
 
-/* a link that has both classes. Overrides the previous declaration*/
-a.button_up.highlighted {
-  background-color: #B69949;
-}
+  header > * {   /* Every immediate child to be vertically centered */
+    margin: auto;
+  }
 
-header > * {   /* Every immediate child to be vertically centered */
-  margin: auto;
-}
+  header #logo {
+    margin: auto 0;
+    display: flex;
+    margin-right: 20px;
+  }
 
-header #logo {
-  margin: auto 0;
-  display: flex;
-  margin-right: 20px;
-}
+  header a {
+    color: white;
+    text-decoration: none;
+  }
 
-header a {
-  color: white;
-  text-decoration: none;
-}
-
-header #user-links {
-  flex: 1;
-  -webkit-flex: 1;
-  text-align: right;
-}
+  header #user-links {
+    flex: 1;
+    -webkit-flex: 1;
+    text-align: right;
+  }
 
 #links-container {
   background-color: white;
@@ -91,15 +92,59 @@ header #user-links {
   padding: 15px;
 }
 
-.link a.title {
-  letter-spacing: 1px;
+  .link a.title {
+    letter-spacing: 1px;
+  }
+
+  .link .description {
+    margin: 10px inherit;
+  }
+
+  .link .source {
+    float: right;
+    font-size: 12px;
+  }
+
+
+footer {
+  display: flex;
+  background-color: rgba(0,0,0,0.2);
 }
 
-.link .description {
-  margin: 10px inherit;
+  footer > * {
+    margin: auto inherit;
+  }
+
+  footer img {
+    vertical-align: top;
+  }
+
+  footer #technologies {
+    -webkit-flex: 1;
+    flex: 1;
+  }
+
+  footer p {
+    padding: 5px 25px;
+  }
+
+/* style for 'sticky' footer */
+
+* {
+  margin: 0;
 }
 
-.link .source {
-  float: right;
-  font-size: 12px;
+html, body {
+  height: 100%;
+}
+
+.wrapper {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -4em;
+}
+
+.footer, .push {
+  min-height: 4em;
 }

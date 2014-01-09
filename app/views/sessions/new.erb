@@ -11,3 +11,7 @@
     <input type="submit" value="Sign in" class="button">
   </p>
 </form>
+
+<% if flash[:errors] && !flash[:errors].empty? %>
+  <a href='/users/forgotten_pwd'>Forgot password?</a>
+<% end %>

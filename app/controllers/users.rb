@@ -2,7 +2,7 @@ require 'securerandom'
 
 get '/users/new' do
   @user = User.new
-  erb :"users/new"
+  erb :"users/new", :layout => !request.xhr?
 end
 
 post '/users' do

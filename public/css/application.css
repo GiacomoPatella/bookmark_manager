@@ -97,6 +97,7 @@ header {
 
 .link {
   display: none;
+  position: relative;
   background-color: #EEE;
   box-shadow: 0 0 5px rgba(0,0,0,0.4);
   /* 10px for top and bottom, inherit from parent for left and right */
@@ -116,6 +117,19 @@ header {
     float: right;
     font-size: 12px;
   }
+
+  .link .star {
+    position: absolute;
+    font-size: 24px;
+    right: 5px;
+    top: 5px;
+    color: yellowgreen;
+    cursor: pointer;
+  }
+
+    .link .star.solid {
+      opacity: 0;
+    }
 
 
 .flash {

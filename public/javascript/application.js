@@ -5,3 +5,13 @@ function animateLinks() {
 $(function() {
   animateLinks();
 })
+
+function addFavouritesHandler() {
+  $(".star.solid").click(function() {
+    $(this).animate({opacity: 1}, 500);
+  });
+}
+
+$(function() {
+  addFavouritesHandler();
+})
